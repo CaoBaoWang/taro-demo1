@@ -1,5 +1,6 @@
 import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Button } from '@tarojs/components'
+import Taro from '@tarojs/taro'
 import './index.scss'
 
 export default class Index extends Component {
@@ -14,10 +15,14 @@ export default class Index extends Component {
 
   componentDidHide () { }
 
+  toMine = ()=>{
+    Taro.navigateTo({url: '/pages/mine/mine'})
+  }
   render () {
     return (
       <View className='index'>
         <Text>Hello world!</Text>
+        <Button onClick={this.toMine}>minef</Button>
       </View>
     )
   }
